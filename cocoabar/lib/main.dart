@@ -55,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
   var whatsappURl_android = "whatsapp://send?phone=01115060678&text=hello";
   var whatappURL_ios = "https://wa.me/01115060678?text=${Uri.parse("hello")}";
 
-  void _contactViaWhatsApp(context) async {
+  void _contactViaWhatsApp(context) {
     String whatsAppUrl = "";
 
     String phoneNumber = 'your-phone-number';
@@ -111,7 +111,9 @@ class _MyHomePageState extends State<MyHomePage> {
         // Generate 100 widgets that display their index in the List.
         children: [
           Center(
-            child: InkWell(child: const Text('Whatsapp'), onTap: _launchURL),
+            child: InkWell(
+                child: const Text('Whatsapp'),
+                onTap: () => _contactViaWhatsApp(context)),
           ),
           Center(
             child: InkWell(
