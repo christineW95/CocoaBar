@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 void main() {
   runApp(const MyApp());
@@ -49,6 +52,32 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+  var whatsappURl_android = "whatsapp://send?phone=01115060678&text=hello";
+  var whatappURL_ios = "https://wa.me/01115060678?text=${Uri.parse("hello")}";
+
+  void _contactViaWhatsApp(context) async {
+    String whatsAppUrl = "";
+
+    String phoneNumber = 'your-phone-number';
+    String description = "your-custom-message";
+
+    if (Platform.isIOS) {
+      whatsAppUrl =
+          'whatsapp://wa.me/$phoneNumber/?text=${Uri.parse(description)}';
+    } else {
+      whatsAppUrl =
+          'https://wa.me/+$phoneNumber?text=${Uri.parse(description)}';
+    }
+
+    if (await canLaunch(whatsAppUrl)) {
+      await launch(whatsAppUrl);
+    } else {
+      final snackBar = SnackBar(
+        content: Text("Install WhatsApp First Please"),
+      );
+      ScaffoldMessenger.of(context).showSnackBar(snackBar);
+    }
+  }
 
   void _incrementCounter() {
     setState(() {
@@ -75,35 +104,21 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Column(
-          // Column is also a layout widget. It takes a list of children and
-          // arranges them vertically. By default, it sizes itself to fit its
-          // children horizontally, and tries to be as tall as its parent.
-          //
-          // Invoke "debug painting" (press "p" in the console, choose the
-          // "Toggle Debug Paint" action from the Flutter Inspector in Android
-          // Studio, or the "Toggle Debug Paint" command in Visual Studio Code)
-          // to see the wireframe for each widget.
-          //
-          // Column has various properties to control how it sizes itself and
-          // how it positions its children. Here we use mainAxisAlignment to
-          // center the children vertically; the main axis here is the vertical
-          // axis because Columns are vertical (the cross axis would be
-          // horizontal).
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
+      body: GridView.count(
+        // Create a grid with 2 columns. If you change the scrollDirection to
+        // horizontal, this produces 2 rows.
+        crossAxisCount: 2,
+        // Generate 100 widgets that display their index in the List.
+        children: [
+          Center(
+            child: InkWell(child: const Text('Whatsapp'), onTap: _launchURL),
+          ),
+          Center(
+            child: InkWell(
+                child: const Text('Instagram'),
+                onTap: () => {launch('https://www.instagram.com/cocoabar_1/')}),
+          )
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,

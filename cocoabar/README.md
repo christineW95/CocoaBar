@@ -14,3 +14,7 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+1-build the app for web
+2- run dhttpd
+3- run dhttpd --path build/web/
+4- access the website from localhot:8080
