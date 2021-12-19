@@ -98,19 +98,20 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           Center(
             child: InkWell(
-                child: Column(
-                  children: [
-                    FittedBox(
-                      child: Image.asset(
-                        'menu.png',
-                        width: 50,
-                        height: 50,
-                      ),
-                      fit: BoxFit.contain,
+              child: Column(
+                children: [
+                  FittedBox(
+                    child: Image.asset(
+                      'menu.png',
+                      width: 50,
+                      height: 50,
                     ),
-                  ],
-                ),
-                onTap: () => {launch('https://g.co/kgs/o7sKKn')}),
+                    fit: BoxFit.contain,
+                  ),
+                ],
+              ),
+              //  onTap: () => {launch('https://g.co/kgs/o7sKKn')}
+            ),
           ),
           Center(
             child: InkWell(
