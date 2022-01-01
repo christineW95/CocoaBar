@@ -59,21 +59,19 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/facebook.png
-    - assets/home.png
+    - assets/background.jpeg
     - assets/instagram.png
     - assets/location.png
     - assets/logo.png
     - assets/menu.png
-    - assets/whatsapp.png
-    - assets/carousel/1.jpg
-    - assets/carousel/2.jpg
-    - assets/carousel/3.jpg
-    - assets/carousel/4.jpg
-    - assets/carousel/5.jpg
-    - assets/carousel/6.jpg
-    - assets/carousel/7.jpg
-    - assets/carousel/8.jpg
-    - assets/carousel/9.jpg
+    - assets/talabat.png
+    - assets/carousel/1.jpeg
+    - assets/carousel/2.jpeg
+    - assets/carousel/3.jpeg
+    - assets/carousel/4.jpeg
+    - assets/carousel/5.jpeg
+    - assets/carousel/6.jpeg
+    - assets/carousel/7.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

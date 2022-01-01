@@ -1,0 +1,6 @@
+version: "Apple Swift version 5.5.1 (swiftlang-1300.0.31.4 clang-1300.0.29.6)"
+options: "948188acc814d849e99d426d02ab30dec93dcde29db00af4854afbab2172855f"
+build_start_time: [1641051349, 727691173]
+build_end_time: [1641051350, 419547080]
+inputs:
+  "/Volumes/Work/Development/CocoaBar/cocoabar/ios/Runner/AppDelegate.swift": [1641046571, 449791431]

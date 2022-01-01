@@ -30,15 +30,15 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var whatsappURl_android = "whatsapp://send?phone=01115060678&text=hello";
+  var whatsappURl_android = "whatsapp://send?phone=01150553217&text=hello";
   var whatappURL_ios = "https://wa.me/01115060678?text=${Uri.parse("hello")}";
 
   openwhatsapp() async {
-    var whatsapp = "+201212903697";
+    var whatsapp = "+201150553217";
     var whatsappURl_android =
-        "whatsapp://send?phone=" + whatsapp + "&text=I want to order";
+        "whatsapp://send?phone=" + whatsapp + "&text=اطلب اوردر:";
     var whatappURL_ios =
-        "https://wa.me/$whatsapp?text=${Uri.parse("I want to order")}";
+        "https://wa.me/$whatsapp?text=${Uri.parse("اطلب اوردر:")}";
     if (Platform.isIOS) {
       // for iOS phone only
       if (await canLaunch(whatappURL_ios)) {
@@ -60,128 +60,165 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    var grid = Container(
-      child: GridView.count(
-        crossAxisCount: 5,
-        children: [
-          Center(
-            child: InkWell(
-                child: Column(
-                  children: [
-                    FittedBox(
+    var grid = GridView.count(
+      shrinkWrap: true,
+      crossAxisCount: 3,
+      children: [
+        Center(
+          child: InkWell(
+              child: Column(
+                children: [
+                  Container(
+                    child: FittedBox(
                       child: Image.asset(
-                        'whatsapp.png',
-                        width: 50,
-                        height: 50,
+                        'assets/talabat.png',
+                        width: 100,
+                        height: 100,
                       ),
                       fit: BoxFit.contain,
                     ),
-                  ],
-                ),
-                onTap: openwhatsapp),
-          ),
-          Center(
-            child: InkWell(
-                child: Column(
-                  children: [
-                    FittedBox(
-                      child: Image.asset(
-                        'instagram.png',
-                        width: 50,
-                        height: 50,
-                      ),
-                      fit: BoxFit.contain,
-                    ),
-                  ],
-                ),
-                onTap: () => {launch('https://www.instagram.com/cocoabar_1/')}),
-          ),
-          Center(
-            child: InkWell(
+                  ),
+                  Text(
+                    'اطلب اوردر',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 35,
+                        fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+              onTap: () => {launch('https://bit.ly/3mM5yiZ')}),
+        ),
+        Center(
+          child: InkWell(
               child: Column(
                 children: [
                   FittedBox(
                     child: Image.asset(
-                      'menu.png',
-                      width: 50,
-                      height: 50,
+                      'assets/instagram.png',
+                      width: 100,
+                      height: 100,
                     ),
                     fit: BoxFit.contain,
                   ),
+                  Text(
+                    'انستجرام',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 35,
+                        fontWeight: FontWeight.bold),
+                  )
                 ],
               ),
-              //  onTap: () => {launch('https://g.co/kgs/o7sKKn')}
-            ),
-          ),
-          Center(
-            child: InkWell(
-                child: Column(
-                  children: [
-                    FittedBox(
-                      child: Image.asset(
-                        'facebook.png',
-                        width: 50,
-                        height: 50,
-                      ),
-                      fit: BoxFit.contain,
+              onTap: () => {launch('https://www.instagram.com/cocoabar_1/')}),
+        ),
+        Center(
+          child: InkWell(
+              child: Column(
+                children: [
+                  FittedBox(
+                    child: Image.asset(
+                      'assets/menu.png',
+                      width: 100,
+                      height: 100,
                     ),
-                  ],
-                ),
-                onTap: () => {launch('https://www.facebook.com/cocoaabar/')}),
-          ),
-          Center(
-            child: InkWell(
-                child: Column(
-                  children: [
-                    FittedBox(
-                      child: Image.asset(
-                        'location.png',
-                        width: 50,
-                        height: 50,
-                      ),
-                      fit: BoxFit.contain,
+                    fit: BoxFit.contain,
+                  ),
+                  Text(
+                    'المنيو',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 35,
+                        fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+              onTap: () => {
+                    launch(
+                        'https://m.facebook.com/cocoaabar/photos/p.125321116644510/125321116644510')
+                  }),
+        ),
+        Center(
+          child: InkWell(
+              child: Column(
+                children: [
+                  FittedBox(
+                    child: Image.asset(
+                      'assets/facebook.png',
+                      width: 100,
+                      height: 100,
                     ),
-                  ],
-                ),
-                onTap: () => {launch('https://g.co/kgs/o7sKKn')}),
-          ),
-        ],
-      ),
+                    fit: BoxFit.contain,
+                  ),
+                  Text(
+                    'فيسبوك',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 35,
+                        fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+              onTap: () => {launch('https://www.facebook.com/cocoaabar/')}),
+        ),
+        Center(
+          child: InkWell(
+              child: Column(
+                children: [
+                  FittedBox(
+                    child: Image.asset(
+                      'assets/location.png',
+                      width: 100,
+                      height: 100,
+                    ),
+                    fit: BoxFit.contain,
+                  ),
+                  Text(
+                    'اقرب فرع',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 35,
+                        fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+              onTap: () => {launch('https://g.co/kgs/o7sKKn')}),
+        ),
+      ],
     );
     return Scaffold(
       appBar: AppBar(
-        title: Row(
-          children: [
-            Image.asset(
-              'logo.png',
-              width: 350,
-              height: 160,
-            )
-          ],
+        backgroundColor: Colors.white,
+        title: Center(
+          child: Row(
+            children: [
+              Image.asset(
+                'assets/logo.png',
+                width: 360,
+                height: 150,
+              )
+            ],
+          ),
         ),
       ),
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: new AssetImage("home.png"),
-            fit: BoxFit.cover,
-          ),
+              image: new AssetImage("assets/background.jpeg"),
+              fit: BoxFit.cover),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(60.0),
+          padding: const EdgeInsets.all(80.0),
           child: Container(
+              alignment: Alignment.center,
               decoration: BoxDecoration(
                 color: Colors.brown.shade100.withOpacity(0.4),
               ),
-              child: Column(
-                children: [
-                  carousel(),
-                  Expanded(
-                      child: Padding(
-                    padding: const EdgeInsets.all(50.0),
-                    child: grid,
-                  ))
-                ],
+              child: Padding(
+                padding: const EdgeInsets.only(top: 220.0),
+                child: Center(
+                  child: grid,
+                ),
               )),
         ),
       ),
@@ -191,29 +228,27 @@ class _MyHomePageState extends State<MyHomePage> {
 
 class carousel extends StatelessWidget {
   var arrayOfImages = [
-    'carousel/1.jpg',
-    'carousel/2.jpg',
-    'carousel/3.jpg',
-    'carousel/4.jpg',
-    'carousel/5.jpg',
-    'carousel/6.jpg',
-    'carousel/7.jpg',
-    'carousel/8.jpg',
-    'carousel/9.jpg'
+    'assets/carousel/1.jpeg',
+    'assets/carousel/2.jpeg',
+    'assets/carousel/3.jpeg',
+    'assets/carousel/4.jpeg',
+    'assets/carousel/5.jpeg',
+    'assets/carousel/6.jpeg',
+    'assets/carousel/7.jpeg',
   ];
   @override
   Widget build(BuildContext context) {
     return CarouselSlider(
       options: CarouselOptions(
         height: 400,
-        aspectRatio: 16 / 9,
+        aspectRatio: 20 / 9,
         viewportFraction: 0.8,
         initialPage: 0,
         enableInfiniteScroll: true,
         reverse: true,
         autoPlay: true,
-        autoPlayInterval: Duration(seconds: 2),
-        autoPlayAnimationDuration: Duration(milliseconds: 800),
+        autoPlayInterval: const Duration(seconds: 2),
+        autoPlayAnimationDuration: const Duration(milliseconds: 800),
         autoPlayCurve: Curves.fastOutSlowIn,
         enlargeCenterPage: true,
         scrollDirection: Axis.horizontal,
@@ -222,9 +257,9 @@ class carousel extends StatelessWidget {
         return Builder(
           builder: (BuildContext context) {
             return Container(
-                width: MediaQuery.of(context).size.width,
-                margin: EdgeInsets.symmetric(horizontal: 5.0),
-                // decoration: BoxDecoration(color: Colors.amber),
+                width: MediaQuery.of(context)
+                    .size
+                    .width, // decoration: BoxDecoration(color: Colors.amber),
                 child: Image.asset(i));
           },
         );
